@@ -33,4 +33,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     @Query(value = "UPDATE Employee SET name = ?1 WHERE name = ?2", nativeQuery = true)
     Integer updateName(String newName, String oldName);
     //7.删除姓名是*的employee
+    void deleteByName(String name);
 }
